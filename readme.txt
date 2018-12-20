@@ -1,5 +1,4 @@
-# simple-privacy
-A simple java application provides encryption/decryption and message digest functionalities.
+SimplePrivacy is a simple java software provides encryption/decryption and message digest functionalities with common algorithms.
 
 Main features:
 A swing GUI to facilitate operations;
@@ -21,4 +20,3 @@ Java platform requirement: Java 8 (jdk/jre 1.8) or above
 License: GPLv3 <http://www.gnu.org/licenses/gpl-3.0.en.html>
 Author: Benjamin Zhang <loneada@sina.com>
 Version: 0.5.0
-

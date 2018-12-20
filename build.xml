@@ -1,0 +1,33 @@
+<project name="SimplePrivacy" default="dist" basedir=".">
+  <description>A simple privacy application provides encryption/decryption and message digests.</description>
+  <property name="src" location="src"/>
+  <property name="build" location="classes"/>
+  <property name="dist" location="dist"/>
+  <property name="version" value="0.5.0"/>
+
+  <target name="init">
+    <mkdir dir="${build}"/>
+    <mkdir dir="${dist}"/>
+  </target>
+
+  <target name="compile" depends="init" description="Compile the source files">
+    <javac srcdir="${src}" destdir="${build}"/>
+  </target>
+
+  <target name="dist" depends="compile" description="Generate the jarball">
+    <jar jarfile="${dist}/simpleprivacy-${version}.jar" basedir="${build}">
+      <manifest>
+        <attribute name="Main-Class" value="com.benjamin.simpleprivacy.SimplePrivacy"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <target name="run" depends="dist" description="Run the application">
+    <java jar="${dist}/simpleprivacy-${version}.jar" fork="true"/>
+  </target>
+
+  <target name="clean" description="Clean up">
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+  </target>
+</project>
